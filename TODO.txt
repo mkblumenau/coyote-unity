@@ -1,0 +1,112 @@
+Things I need (old outline, ignore this):
+	A script for a player (Either human or computer)
+		Variables
+			Card they're holding
+			If they're a human
+			Is it their turn
+		Methods
+	A script just for human player actions
+	A script for the UI
+	A game manager script
+		Tracks what turn it is
+		Shuffles the cards, deals them out
+		Tracks bid
+		Determines who wins challenge
+		Variables
+			Cards list
+		
+		
+In the game already:
+	The game is now technically fully functional.
+	The AI seems fine. It seems a little quick to challenge, but that's not my biggest problem.
+	The UI works, although graphically it's pretty basic.
+	
+Issues:
+	When playing on 5 players, the middle card is above the menu.
+	
+Want to add:
+	Game log- when outputting the results of a challenge, include which player had which card
+	Game log- increase size of container every time a line is added, so the player can still see everything
+	Maybe revamp the game so the cards are gameObjects?
+	In the player UI, make it so that the unusable buttons hide
+		I don't know if this is possible; currently they're just disabled
+	In the player info displays, truncate the player names
+		Not that much of an issue, since the game sets all those names itself
+		
+Progress:
+	2023-07-18
+		Made it so playersList is now a function returning the children of the players container, not a new list copied from that
+		Changed the turn counter to hold a playerScript instead of being based on integer IDs
+		Made the graphics scale a little better
+		Fixed a bug where each time the cards total was counted, a new card was removed from the deck for ?
+		Made it so if there's a ? card, the bonus card drawn from it shows in the game log
+		
+		Currently in the scripting, if you guess the exact total, you'll win a challenge.
+			To change this, edit FinishResolvingChallenge() in GameManagerScript and challenge() in GameLogManager.
+		If you add new values to the deck:
+			In PlayerScript, make sure you change AILowBound and AIHighBound.
+			If you add something below -10, edit maxSeenSoFar in totalKnownToPlayer() in PlayerScript to be 1 less than the new lowest card.
+			In GameManagerScript, make sure that defaultFirstBid is 1 less than the lowest possible total of cards on 3 players.
+			If the new values are the same as the current values for maxZeroValue and questionValue in GameManagerScript, change them to new numbers that aren't in the deck.
+			Add a sprite for the new card on Player info displays.
+		Places where the code would have to change if cards became GameObjects:
+			Create a new class "PlayingCard" with an int value, as well as checkboxes for if it's Max 0 or ?
+				It would also have a sprite value
+			Create a new object that all the prefab cards are under
+			Make a script to copy all the cards from it into a deck object, then shuffle
+			Create zones for the deck and middle card
+			Make a function to deal them out to each PlayerScript
+			PlayerScript
+				Instead of cardHeld, have a function to get the first child of the player
+					That or give each player a hand zone
+				Edit totalKnownToPlayer, totalKnownToPlayerWithSpecials
+			GameManagerScript
+				Edit cardTranslated, cardsTotal, setUpRound
+				Replace makeDeck, drawRandomCard
+	2023-06-14
+		Reworked the menu system: in-game, all menus are now submenus of one new main menu
+		Reworked the Quit menu
+			Previously it asked if you wanted to quit; this gave a yes-or-no choice where yes just returned to the main menu
+			It now offers a detailed choice between returning to the main menu, exiting the game entirely, or returning to the game
+		Added a menu for exporting the game log to a file
+		Added the number of eyes that the player has to the display showing the total visible to the player
+			It was already visible in the list of players, but this makes it a little easier to see
+		Cleaned up the code by deleting a bunch of commented-out stuff
+			I backed the old versions of the scripts to a different folder so I can still look back on them
+		Added TextFileOutputScript and UpdatePlayerTotalText
+		Made it so the game log includes peeks
+		Added a pause after challenges are resolved, giving the player the opportunity to see all the cards
+		Fixed some issues
+	2023-06-11
+		Tweaked the AI
+		Built for the first time (why is the UI the same size as it is in the editor but the game is still fullscreen)
+	2023-06-10
+		Replaced the old text-based UI with a more visually interesting UI
+		Added card sprites to the game
+		Created a bunch of scripts
+			UpdateAllPlayerInfo
+			PlayerInfoDisplayScript
+			GameLogManager
+			NumPlayersMenuScript
+			CreateComputerPlayersScript
+		Deprecated DisplayUIManagerScript
+		Allowed the player to customize the number of players
+	2023-06-09
+		Added a working scrollbar and close button to the Rules menu
+		Added the Rules and Quit menus and a pause button to the game
+		Added MenuControlScript (replacing the short-lived MainMenuScript)
+		Made the game manager automatically detect players from GameObjects
+	2023-06-08
+		Added a Rules menu to the main menu screen (it's incomplete)
+	2023-06-07
+		Got the game to the point of being playable
+		Implemented player UI and bare-bones AI
+		Added PlayerUIScript
+		Added DisplayUIManagerScript (which at first was just functionality moved from GameManagerScript)
+		Added an intro screen
+	2023-06-06
+		Started project
+		Created PlayerScript, GameManagerScript
+		Got the game to the point that you could deal cards out to the players and the middle, and display everything onscreen as text
+			(There was no next-turn display yet, as well as no UI for actually taking turns)
+		I may have implemented some of the functions for the actions on turns

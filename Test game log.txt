@@ -1,0 +1,84 @@
+Human has won!
+
+-----
+Comp2 challenged Human's bid of 2.
+The total was 9.
+Human wins the challenge.
+Cards in play this round: Max 0, 9, 10
+
+Human raised the bid to 2.
+Comp2 raised the bid to 1.
+Human raised the bid to 0.
+-----
+Human challenged Comp2's bid of 19.
+The total was 35.
+Comp2 wins the challenge.
+Cards in play this round: 20, 15, 0
+
+Comp2 raised the bid to 19.
+Human raised the bid to 17.
+Comp2 raised the bid to 16.
+Human raised the bid to 15.
+Comp2 raised the bid to -13.
+Human raised the bid to -14.
+Comp2 raised the bid to -15.
+-----
+Comp2 challenged Human's bid of 0.
+The total was 0.
+Human wins the challenge.
+Cards in play this round: Max 0, 0, 3
+
+Human raised the bid to 0.
+-----
+Comp2 challenged Human's bid of 5.
+The total was 2.
+Comp2 wins the challenge.
+Cards in play this round: 2, Max 0, 10
+
+Human raised the bid to 5.
+Comp2 raised the bid to -15.
+-----
+Comp2 challenged Comp1's bid of 4.
+The total was -4.
+Comp2 wins the challenge.
+Cards in play this round: -5, Max 0, 1, 5
+
+Comp1 raised the bid to 4.
+Human raised the bid to 3.
+Comp2 raised the bid to -13.
+Comp1 raised the bid to -15.
+-----
+Comp1 challenged Human's bid of 10.
+The total was 17.
+Human wins the challenge.
+Cards in play this round: 9, 7, 6, -5
+
+Human raised the bid to 10.
+Comp2 raised the bid to 9.
+Comp1 raised the bid to 8.
+Human raised the bid to 7.
+Comp2 raised the bid to -13.
+Comp1 raised the bid to -15.
+-----
+Comp1 challenged Human's bid of 9.
+The total was 26.
+Human wins the challenge.
+Cards in play this round: 8, 5, 4, 9
+
+Human raised the bid to 9.
+Comp2 raised the bid to 8.
+Comp1 raised the bid to 6.
+Human raised the bid to 4.
+Comp2 raised the bid to -14.
+-----
+Comp2 challenged Comp1's bid of 14.
+The total was 35.
+Comp1 wins the challenge.
+Cards in play this round: 10, 6, 15, 4
+
+Comp1 raised the bid to 14.
+Human raised the bid to 13.
+Comp2 raised the bid to 12.
+Comp1 raised the bid to 11.
+Human raised the bid to 10.
+Welcome to Coyote!

@@ -1,0 +1,47 @@
+Overview of project
+	Scripts
+		PlayerScript
+			Each player is a GameObject with this attached
+			Manages various variables for the players
+			Has some player actions, mostly those that relate to the variables it has (like peeking and losing eyes)
+			The AI for the player is also included here.
+		PlayerUIScript
+			Attached to the "Player UI" game object, which has all the buttons for the UI under it
+			Controls updating the display for the tentative bid input system, as well as letting the player do actions
+			These actions are functions in the script; you have to use the editor to tell the buttons to do them
+		UpdatePlayerTotalText
+			This script updates the text that tells the player how many eyes they have and what the total visible to them is.
+		GameManagerScript
+			This is the script that runs the gameplay.
+			That includes tracking any variables not attached to a player (such as the middle card and the current bid).
+			It also resets for each round (including dealing out the cards) and tracks whose turn it is.
+		GameLogManager
+			This script updates the game log.
+		MenuControlScript
+			This script is used both in the game and on the main menu.
+			Its actions:
+				Showing and hiding menus, paying attention to if any menus are already open
+				Pausing and unpausing the game
+				Changing scenes
+		UpdateAllPlayerInfo
+			This script creates the player info displays for each player at the start of the game (see PlayerInfoDisplayScript).
+		PlayerInfoDisplayScript
+			This script is attached to a prefab that's used as an instance of a player info display.
+			It updates based on information from a player.
+		NumPlayersMenuScript
+			This script controls the UI for changing the number of players in the game in the main menu.
+		CreateComputerPlayersScript
+			This script is used on the Players category object.
+			It creates the number of computer players that you requested from the main menu.
+		TextFileOutputScript
+			This script is used for exporting the game log to a text file.
+			It's called from MenuControlScript.
+				
+	Deprecated scripts
+		DisplayUIManagerScript
+			This script was used for running the previous text-based UI.
+			The game log functions it had have been moved to GameLogManager.
+			To reenable this, do this:
+				Turn on the "Display UI Manager" script under Game log manager
+				Turn off the "Update All Players Info" script on Player info displays (under Canvas)
+				Show "Old UI elements"
